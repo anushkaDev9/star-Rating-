@@ -1,5 +1,5 @@
 # Star Rating :⭐
-Created a star rating website 
+Created a star rating Component 
 # Tech Stack :🖥️
 - `HTML`<br/>
 - `CSS`<br/>
