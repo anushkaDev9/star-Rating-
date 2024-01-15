@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(224, 235, 255);
+   }
+   .main{
+       background-color: white;
+       margin-top: 10%;
+       width:50%;
+       height: 13.5rem;
+       margin-left: 26%;
+       border-radius: 3px;
+       box-shadow: rgb(157, 152, 152) 2px 2px 2px 2px;
+       
+   }
+   h3{
+       text-align: center;
+       padding-top:4%;
+        font-family: 'Poppins', sans-serif;
+   } 
+span{
+    margin-left: 2%;
+    margin-right: 2%;
+    color: rgb(152, 150, 150);
+    float: right;
+}
+   .stars{
+    margin-left: 4%;
+    margin-right: 6%;
+    padding-right: 23%;
+    margin-top: 5%;
+   }
+   .checked:hover {
+    color: orange;
+    
+  }
+  .checked[clicked]{
+     color:orange
+  }
+  .checked[clicked] ~span{
+    color:orange
+ }
+ 
+ .text{
+padding-left: 16%;
+padding-right: 4%;
+margin-top: 5%;
+font-family: 'PT Sans', sans-serif;
+ }

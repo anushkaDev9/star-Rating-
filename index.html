@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Star Rating</title>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+  
+  
+</head>
+
+<body>
+  <h1 id="app"></h1>
+ <div class="main"> 
+    <h3>How many stars would you give to our online code editor?</h3>
+    <div class="stars" id="stars">
+        <span class="fa fa-star fa-3x rounded checked" data-rating="5" ></span>
+        <span class="fa fa-star fa-3x checked" data-rating="4"></span>
+        <span class="fa fa-star fa-3x checked " data-rating="3"></span>
+        <span class="fa fa-star fa-3x checked " data-rating="2"></span>
+        <span class="fa fa-star fa-3x checked " data-rating="1"></span>
+    <br/>
+        
+    </div><br/>
+    <p class="text"></p>
+    <i class='fas fa-grin-beam'></i>
+ </div>
+ <script>
+    var stars=document.querySelectorAll('.checked')
+    count=0
+    window.addEventListener('load',function(){
+        for (let star of stars){
+            star.addEventListener('click' , function(){
+               this.setAttribute('clicked',true)
+               let rating=this.dataset.rating
+               
+               if(rating==='5'){
+                    var text=document.querySelector('.text')
+                    text.innerHTML="Excellent We're are thrilled to hear you had such a positive experience.Thank you for choosing our platform."
+                    console.log(text)
+               }
+               if(rating==='4'){
+                var sibling=star.previousElementSibling
+                sibling.removeAttribute('clicked')
+                console.log(sibling)
+                var text=document.querySelector('.text')
+                text.innerHTML="Thank you for your positve feedback! We're are glad to know you had such a great experience and we apreciate your support!."
+                
+           }
+           if(rating==='3'){
+            var sibling=star.previousElementSibling
+                sibling.removeAttribute('clicked')
+                sibling.previousElementSibling.removeAttribute('clicked')
+            star.previousElementSibling.color='unset'
+            var text=document.querySelector('.text')
+            text.innerHTML="Thank you for your  feedback! We're are sorry to hear that your experience wasn't perfect.We would love to hear more about your concerns to see how we can improve."
+           
+       }
+           if(rating==='2'){
+            var sibling=star.previousElementSibling
+                sibling.removeAttribute('clicked')
+                sibling.previousElementSibling.removeAttribute('clicked')
+                sibling.previousElementSibling.previousElementSibling.removeAttribute('clicked')
+               
+            var text=document.querySelector('.text')
+            text.innerHTML="We apologize for the inconvenience you experienced We appreciate your feebdack and would like to work with you to address any issues."
+            console.log(text)
+       }
+       if(rating==='1'){
+        var sibling=star.previousElementSibling
+                sibling.removeAttribute('clicked')
+                sibling.previousElementSibling.removeAttribute('clicked')
+                sibling.previousElementSibling.previousElementSibling.removeAttribute('clicked')
+                sibling.previousElementSibling.previousElementSibling.previousElementSibling.removeAttribute('clicked')
+                var text=document.querySelector('.text')
+        text.innerHTML="We're sorry to hear that your had a bad experince.We would like to learn about what happened and how we can make things right!"
+        console.log(text)
+   }
+            })
+    
+        }
+    })
+   
+    
+ </script>
+  <!-- DON'T remove it -->
+  <script src="src/index.js"></script>
+</body>
